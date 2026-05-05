@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mpxjnxlw2gfy"]
+
+[ext_resource type="Texture2D" uid="uid://27vojbfale6v" path="res://assets/matcha making bg.png" id="1_ect4s"]
+
+[node name="Step6Pour" type="Node2D" unique_id=1523434392]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1104617965]
+position = Vector2(160, 91)
+texture = ExtResource("1_ect4s")

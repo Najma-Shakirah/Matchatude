@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://obxqqjp330dc"]
+
+[ext_resource type="Texture2D" uid="uid://bdd3fyxk554e3" path="res://draft main screen2.png" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://skt37u6cy025" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="FontFile" uid="uid://bvram42ciyes4" path="res://fonts/GrapeSoda.ttf" id="2_jix8l"]
+[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="3_glbon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("1_fu7sn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27595595, 0.41833764, 0.17973268, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 8
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.15686275)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+bg_color = Color(0.31253108, 0.52523774, 0.28160453, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27595595, 0.41833764, 0.17973268, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 8
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.15686275)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
+bg_color = Color(0.58944154, 0.72197944, 0.4240781, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27595595, 0.41833764, 0.17973268, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 8
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.15686275)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[node name="MainMenu" type="Control" unique_id=1677128595]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jix8l")
+
+[node name="Panel" type="Panel" parent="." unique_id=684557258]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1907415830]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -57.0
+offset_right = 104.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_fonts/normal_font = ExtResource("2_jix8l")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave]Matchatude"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2012755566]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 10.0
+offset_right = 37.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1191299538]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27595595, 0.41833764, 0.17973268, 1)
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1070344803]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27595595, 0.41833764, 0.17973268, 1)
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

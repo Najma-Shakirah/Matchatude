@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ttkj06m57u70"]
+
+[ext_resource type="Texture2D" uid="uid://27vojbfale6v" path="res://assets/matcha making bg.png" id="1_5plh7"]
+[ext_resource type="Script" uid="uid://bc754axty031d" path="res://scripts/step_2_sift.gd" id="1_m0rhe"]
+[ext_resource type="Texture2D" uid="uid://ber3hjna6jd54" path="res://assets/chawan.png" id="3_i0fyn"]
+[ext_resource type="Texture2D" uid="uid://vi12y0as12bh" path="res://assets/sift1.png" id="4_o67k3"]
+[ext_resource type="Texture2D" uid="uid://no20neqaihve" path="res://assets/chashaku.png" id="5_c5mpe"]
+[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="6_i0fyn"]
+
+[node name="Step2Sift" type="Node2D" unique_id=744672395]
+script = ExtResource("1_m0rhe")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1759459724]
+position = Vector2(160, 91)
+texture = ExtResource("1_5plh7")
+
+[node name="Chawan" type="Sprite2D" parent="." unique_id=2043863842]
+position = Vector2(162, 90)
+texture = ExtResource("3_i0fyn")
+
+[node name="Sift1" type="Sprite2D" parent="." unique_id=1644215943]
+position = Vector2(164, 97)
+texture = ExtResource("4_o67k3")
+
+[node name="Chashaku" type="Sprite2D" parent="." unique_id=314759891]
+position = Vector2(209, 39)
+rotation = 0.37524575
+texture = ExtResource("5_c5mpe")
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=346733921]
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 300.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("6_i0fyn")
+theme_override_font_sizes/font_size = 8

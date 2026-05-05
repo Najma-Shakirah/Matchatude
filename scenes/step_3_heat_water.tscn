@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b3pxy7jd1l3jl"]
+
+[ext_resource type="Texture2D" uid="uid://27vojbfale6v" path="res://assets/matcha making bg.png" id="1_7uyvh"]
+[ext_resource type="Script" uid="uid://45r8qf0r11h3" path="res://scripts/step_3_heat_water.gd" id="1_r7sdy"]
+[ext_resource type="Texture2D" uid="uid://cdsfrkwyug2ij" path="res://assets/kettle with temp heater.png" id="2_v0wdo"]
+[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="3_r7sdy"]
+
+[node name="Step3HeatWater" type="Node2D" unique_id=300992136]
+script = ExtResource("1_r7sdy")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1435650349]
+position = Vector2(160, 91)
+texture = ExtResource("1_7uyvh")
+
+[node name="KettleWithTempHeater" type="Sprite2D" parent="." unique_id=2014560591]
+position = Vector2(158, 84)
+texture = ExtResource("2_v0wdo")
+
+[node name="KnobButton" type="TextureButton" parent="." unique_id=933091898]
+offset_left = 201.0
+offset_top = 133.0
+offset_right = 241.0
+offset_bottom = 173.0
+
+[node name="TempLabel" type="Label" parent="." unique_id=2080236697]
+offset_left = 86.0
+offset_top = 144.0
+offset_right = 134.0
+offset_bottom = 167.0
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=1910093366]
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 300.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_r7sdy")
+theme_override_font_sizes/font_size = 8
+
+[connection signal="pressed" from="KnobButton" to="." method="_on_knob_button_pressed"]

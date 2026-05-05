@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dbn3lugbpcpnr"]
+
+[ext_resource type="Script" uid="uid://bhgy8mand34ul" path="res://scripts/step_1_weigh.gd" id="1_lmvn4"]
+[ext_resource type="Texture2D" uid="uid://27vojbfale6v" path="res://assets/matcha making bg.png" id="2_i3s68"]
+[ext_resource type="Texture2D" uid="uid://c8g6xvj6hblvg" path="res://assets/digital scale.png" id="3_5otlh"]
+[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="4_1vacw"]
+[ext_resource type="Texture2D" uid="uid://cwh62u0waf5nt" path="res://assets/matcha container with powder.png" id="5_ak210"]
+[ext_resource type="Texture2D" uid="uid://cg6rc5273xw0a" path="res://assets/small bowl 0g matcha.png" id="6_ovogp"]
+[ext_resource type="Texture2D" uid="uid://no20neqaihve" path="res://assets/chashaku.png" id="7_uh0gw"]
+
+[node name="Step1Weigh" type="Node2D" unique_id=1809471973]
+script = ExtResource("1_lmvn4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=147554423]
+position = Vector2(160, 91)
+texture = ExtResource("2_i3s68")
+
+[node name="ScaleSprite" type="Sprite2D" parent="." unique_id=1560028774]
+position = Vector2(165.00002, 111.99999)
+scale = Vector2(0.753125, 0.71944445)
+texture = ExtResource("3_5otlh")
+
+[node name="Screen" type="Sprite2D" parent="ScaleSprite" unique_id=969762618]
+position = Vector2(-219.08714, -155.67566)
+scale = Vector2(1.3278008, 1.3899614)
+
+[node name="DisplayLabel" type="Label" parent="ScaleSprite/Screen" unique_id=1098261802]
+offset_left = 150.0
+offset_top = 148.0
+offset_right = 176.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("4_1vacw")
+theme_override_font_sizes/font_size = 18
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnitLabel" type="Label" parent="ScaleSprite/Screen" unique_id=453651019]
+offset_left = 178.0
+offset_top = 144.0
+offset_right = 196.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("4_1vacw")
+text = "g"
+vertical_alignment = 1
+
+[node name="ScreenDark" type="ColorRect" parent="ScaleSprite/Screen" unique_id=176652502]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.5
+offset_top = 149.5
+offset_right = 191.50002
+offset_bottom = 170.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+
+[node name="PowerButton" type="TextureButton" parent="ScaleSprite" unique_id=423055586]
+offset_left = 61.078827
+offset_top = 55.598465
+offset_right = 87.63486
+offset_bottom = 81.69885
+
+[node name="UnitButton" type="TextureButton" parent="ScaleSprite" unique_id=1404000545]
+offset_left = -92.946075
+offset_top = 45.868736
+offset_right = -59.751053
+offset_bottom = 63.629356
+
+[node name="TareButton" type="TextureButton" parent="ScaleSprite" unique_id=345147014]
+offset_left = -92.946075
+offset_top = 66.718155
+offset_right = -59.751053
+offset_bottom = 82.00774
+
+[node name="AddMatchaButton" type="Button" parent="." unique_id=1020988907]
+visible = false
+offset_left = 214.0
+offset_top = 89.0
+offset_right = 315.0
+offset_bottom = 120.0
+text = "Add Matcha"
+
+[node name="ConfirmButton" type="Button" parent="." unique_id=1867959569]
+visible = false
+offset_left = 214.0
+offset_top = 51.0
+offset_right = 315.0
+offset_bottom = 82.0
+text = "Confirm"
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=921496593]
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 300.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("4_1vacw")
+theme_override_font_sizes/font_size = 8
+
+[node name="FeedbackLabel" type="Label" parent="." unique_id=1389135614]
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 298.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("4_1vacw")
+theme_override_font_sizes/font_size = 8
+
+[node name="MatchaTin" type="Sprite2D" parent="." unique_id=337095829]
+position = Vector2(25, 83)
+texture = ExtResource("5_ak210")
+
+[node name="Bowl" type="Sprite2D" parent="." unique_id=53415622]
+position = Vector2(167, 83)
+texture = ExtResource("6_ovogp")
+
+[node name="Chashaku" type="Sprite2D" parent="." unique_id=1055090099]
+position = Vector2(266, 83)
+texture = ExtResource("7_uh0gw")
+offset = Vector2(20, 7)
+
+[connection signal="pressed" from="ScaleSprite/PowerButton" to="." method="_on_power_button_pressed"]
+[connection signal="pressed" from="ScaleSprite/UnitButton" to="." method="_on_unit_button_pressed"]
+[connection signal="pressed" from="ScaleSprite/TareButton" to="." method="_on_tare_button_pressed"]
