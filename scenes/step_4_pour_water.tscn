@@ -1,9 +1,124 @@
 [gd_scene format=3 uid="uid://djhdhng4156hy"]
 
+[ext_resource type="Script" uid="uid://cpo86metby0lk" path="res://scripts/step_4_pour_water.gd" id="1_5gkeu"]
 [ext_resource type="Texture2D" uid="uid://27vojbfale6v" path="res://assets/matcha making bg.png" id="1_a0bwg"]
+[ext_resource type="Texture2D" uid="uid://c8g6xvj6hblvg" path="res://assets/digital scale.png" id="3_edt3j"]
+[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="4_jpw45"]
+[ext_resource type="Texture2D" uid="uid://dewpvast0i45v" path="res://assets/chawan_pour1.png" id="5_6tf37"]
+[ext_resource type="Texture2D" uid="uid://c4ve5m1qunnes" path="res://assets/kettle pov water.png" id="6_4ocjd"]
+[ext_resource type="Texture2D" uid="uid://bvlyfwdhc0lem" path="res://assets/kettle.png" id="7_t5jg1"]
 
 [node name="Step4PourWater" type="Node2D" unique_id=1804829837]
+script = ExtResource("1_5gkeu")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1385019839]
 position = Vector2(160, 91)
 texture = ExtResource("1_a0bwg")
+metadata/_edit_lock_ = true
+
+[node name="ScaleSprite" type="Sprite2D" parent="." unique_id=1659344514]
+position = Vector2(95.00001, 109)
+scale = Vector2(0.753125, 0.71944445)
+texture = ExtResource("3_edt3j")
+
+[node name="Screen" type="Sprite2D" parent="ScaleSprite" unique_id=316822089]
+position = Vector2(-219.08714, -155.67566)
+scale = Vector2(1.3278008, 1.3899614)
+
+[node name="DisplayLabel" type="Label" parent="ScaleSprite/Screen" unique_id=802861168]
+offset_left = 150.0
+offset_top = 148.0
+offset_right = 176.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("4_jpw45")
+theme_override_font_sizes/font_size = 18
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UnitLabel" type="Label" parent="ScaleSprite/Screen" unique_id=1860632159]
+offset_left = 178.0
+offset_top = 144.0
+offset_right = 196.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("4_jpw45")
+text = "g"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScreenDark" type="ColorRect" parent="ScaleSprite/Screen" unique_id=1867072335]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.5
+offset_top = 149.5
+offset_right = 191.50002
+offset_bottom = 170.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PowerButton" type="TextureButton" parent="ScaleSprite" unique_id=1433893646]
+offset_left = 61.078827
+offset_top = 55.598465
+offset_right = 87.63486
+offset_bottom = 81.69885
+metadata/_edit_use_anchors_ = true
+
+[node name="UnitButton" type="TextureButton" parent="ScaleSprite" unique_id=1853266701]
+offset_left = -92.946075
+offset_top = 45.868736
+offset_right = -59.751053
+offset_bottom = 63.629356
+metadata/_edit_use_anchors_ = true
+
+[node name="TareButton" type="TextureButton" parent="ScaleSprite" unique_id=1617877988]
+offset_left = -92.946075
+offset_top = 66.718155
+offset_right = -59.751053
+offset_bottom = 82.00774
+metadata/_edit_use_anchors_ = true
+
+[node name="ChawanPour1" type="Sprite2D" parent="." unique_id=402130542]
+position = Vector2(94, 83)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_6tf37")
+
+[node name="KettlePovWater" type="Sprite2D" parent="." unique_id=1554491124]
+position = Vector2(203, 113)
+texture = ExtResource("6_4ocjd")
+
+[node name="Kettle" type="Sprite2D" parent="." unique_id=1117731691]
+position = Vector2(254, 85)
+texture = ExtResource("7_t5jg1")
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=1841229454]
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 300.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("4_jpw45")
+theme_override_font_sizes/font_size = 8
+
+[node name="KettleButton" type="TextureButton" parent="." unique_id=229643209]
+offset_left = 193.0
+offset_top = 15.0
+offset_right = 310.0
+offset_bottom = 141.0
+
+[node name="PourButton" type="TextureButton" parent="." unique_id=239535621]
+offset_left = 86.0
+offset_top = 86.0
+offset_right = 317.0
+offset_bottom = 212.0
+
+[connection signal="pressed" from="ScaleSprite/PowerButton" to="." method="_on_power_button_pressed"]
+[connection signal="pressed" from="ScaleSprite/UnitButton" to="." method="_on_unit_button_pressed"]
+[connection signal="pressed" from="ScaleSprite/TareButton" to="." method="_on_tare_button_pressed"]
+[connection signal="pressed" from="KettleButton" to="." method="_on_kettle_button_pressed"]
+[connection signal="button_down" from="PourButton" to="." method="_on_pour_button_button_down"]
+[connection signal="button_up" from="PourButton" to="." method="_on_pour_button_button_up"]

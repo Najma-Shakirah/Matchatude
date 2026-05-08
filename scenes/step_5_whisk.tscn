@@ -1,9 +1,30 @@
 [gd_scene format=3 uid="uid://kh4rxi7lm03x"]
 
 [ext_resource type="Texture2D" uid="uid://27vojbfale6v" path="res://assets/matcha making bg.png" id="1_juite"]
+[ext_resource type="Script" uid="uid://dnpgivccefrwj" path="res://scripts/step_5_whisk.gd" id="1_l4ihh"]
+[ext_resource type="Texture2D" uid="uid://bdphl8q5d4jc" path="res://assets/chawan_whisk1.png" id="3_1mb0i"]
+[ext_resource type="Texture2D" uid="uid://dbs6uswtyx3vc" path="res://assets/chasen.png" id="4_l4ihh"]
+[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="5_6sdtg"]
 
 [node name="Step5Whisk" type="Node2D" unique_id=1773903410]
+script = ExtResource("1_l4ihh")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=392505048]
 position = Vector2(160, 91)
 texture = ExtResource("1_juite")
+
+[node name="Chawan" type="Sprite2D" parent="." unique_id=693846606]
+position = Vector2(164, 105)
+texture = ExtResource("3_1mb0i")
+
+[node name="Chasen" type="Sprite2D" parent="." unique_id=1819734202]
+position = Vector2(59, 105)
+texture = ExtResource("4_l4ihh")
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=1640002691]
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 300.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("5_6sdtg")
+theme_override_font_sizes/font_size = 8

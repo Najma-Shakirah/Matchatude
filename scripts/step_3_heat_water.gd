@@ -11,7 +11,7 @@ var is_heating: bool = false
 var done: bool = false
 
 # --- Node references ---
-@onready var kettle: Sprite2D = $Kettle
+@onready var kettle: Sprite2D = $KettleWithTempHeater
 @onready var temp_label: Label = $TempLabel
 @onready var instruction_label: Label = $InstructionLabel
 @onready var knob_button: TextureButton = $KnobButton
@@ -59,4 +59,4 @@ func _on_complete():
 	instruction_label.text = "%.0f°C — perfect! Moving on..." % current_temperature
 	await get_tree().create_timer(1.5).timeout
 	GameManager.complete_step(3)
-	get_tree().change_scene_to_file("res://scenes/Step4_Pour_Water.tscn")
+	get_tree().change_scene_to_file("res://scenes/step_4_pour_water.tscn")
