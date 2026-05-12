@@ -36,6 +36,7 @@ var chawan_frames: Array[Texture2D] = [
 ]
 
 func _ready():
+	MusicManager.play_bgm(preload("res://assets/audios/cafe.mp3"))
 	chashaku.texture = preload("res://assets/chashaku.png")
 	sifter.texture = sifter_frames[0]
 	chawan.texture = chawan_frames[0]

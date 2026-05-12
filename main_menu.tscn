@@ -126,5 +126,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8qtwp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
 text = "Exit"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1629496028]
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

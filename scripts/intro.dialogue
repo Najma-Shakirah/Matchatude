@@ -1,0 +1,13 @@
+~ intro
+
+do change_background("intro_bg1")
+: "Long ago, tea was more than a drink. In Japan, it became a spiritual practice, an art, and a way of life."
+: "During the 16th century, the tea master Sen no Rikyū shaped what would become known as Chadō or Sadō (茶道) — “The Way of Tea.”"
+: "At the heart of Chadō was chanoyu (茶の湯), meaning “hot water for tea.”"
+: "More than a ceremony, chanoyu became a philosophy built upon  Wakeiseijaku (和敬清寂) — harmony, respect, purity, and tranquility."
+: "Centuries later, the spirit of Chadō still remains."
+: "Traditional tea houses continue to preserve these rituals, while matcha itself has spread across the world into cafés, desserts, and modern culture."
+: "Yet within every bowl of matcha still lives the philosophy born long ago:
+to slow down, appreciate the present, and find peace in a fleeting moment."
+
+=> END

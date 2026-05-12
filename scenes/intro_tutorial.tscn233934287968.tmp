@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://crnc44h8x6xo1"]
+
+[ext_resource type="Script" uid="uid://bxfsroxf3bd6" path="res://scripts/intro_tutorial.gd" id="1_0f30q"]
+
+[node name="IntroTutorial" type="Node2D" unique_id=1584240242]
+script = ExtResource("1_0f30q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1575442415]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1538676549]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 319.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+color = Color(0.83664984, 0.72134143, 0.52226293, 1)

@@ -36,6 +36,7 @@ var bowl_frames: Array[Texture2D] = [
 ]
 
 func _ready():
+	MusicManager.play_bgm(preload("res://assets/audios/cafe.mp3"))
 	chashaku.texture = chashaku_empty
 	chashaku.visible = false        # hide until scale is on and tared
 	bowl.texture = bowl_frames[0]

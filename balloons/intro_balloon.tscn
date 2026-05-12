@@ -1,10 +1,9 @@
-[gd_scene format=3 uid="uid://c3c6imalw8le"]
+[gd_scene format=3 uid="uid://eojy50udrn3q"]
 
-[ext_resource type="Script" uid="uid://cv7wun3sp3x7u" path="res://balloon.gd" id="1_4emby"]
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
-[ext_resource type="FontFile" uid="uid://0iqiilpjb4a3" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="2_jj3vs"]
-[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
-[ext_resource type="Texture2D" uid="uid://3rqhpjomniq7" path="res://assets/Mei.png" id="5_wxbh2"]
+[ext_resource type="Script" uid="uid://bgulmt0r58lc1" path="res://balloons/intro_balloon.gd" id="1_4qdud"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_wwxsg"]
+[ext_resource type="FontFile" uid="uid://dt8hkvgsx2jhc" path="res://fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_wwxsg"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_ye8ck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
 content_margin_left = 6.0
@@ -91,6 +90,9 @@ MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 4
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_i6nbm")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qdud"]
+bg_color = Color(0.15672076, 0.13652179, 0.17832163, 1)
+
 [sub_resource type="Animation" id="Animation_i6nbm"]
 resource_name = "progress"
 loop_mode = 1
@@ -112,11 +114,11 @@ _data = {
 &"progress": SubResource("Animation_i6nbm")
 }
 
-[node name="ExampleBalloon" type="CanvasLayer" unique_id=15742338]
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=606752934]
 layer = 100
-script = ExtResource("1_4emby")
+script = ExtResource("1_4qdud")
 
-[node name="Balloon" type="Control" parent="." unique_id=2117486484]
+[node name="Balloon" type="Control" parent="." unique_id=2011547783]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -126,66 +128,70 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=2067695102]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1336939724]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -71.0
+offset_left = -13.0
+offset_top = 101.0
+offset_right = 25.0
+offset_bottom = 7.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=65579200]
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=1275634902]
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_4qdud")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=690555770]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1806847215]
 layout_mode = 2
-theme_override_constants/margin_left = 110
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=2106323251]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1516276009]
 layout_mode = 2
-theme_override_constants/separation = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1971310580]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=393414764]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 4
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=984409487]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2027936868]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
-theme_override_fonts/normal_font = ExtResource("2_jj3vs")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=294942152 instance=ExtResource("2_hfvdi")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1244700169 instance=ExtResource("2_wwxsg")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("2_jj3vs")
+theme_override_fonts/normal_font = ExtResource("3_wwxsg")
 text = "Dialogue..."
 
-[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1805968307]
+[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=215281791]
 custom_minimum_size = Vector2(5, 3)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1946410086]
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=2062950241]
 unique_name_in_owner = true
 position = Vector2(0, -0.455998)
 polygon = PackedVector2Array(0, 0, 2.5, 3, 5, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=671559316]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=2101569805]
 libraries/ = SubResource("AnimationLibrary_6b6c8")
 autoplay = &"progress"
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=1457962365]
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=743859462]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -201,23 +207,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 2
-script = ExtResource("3_1j1j0")
+script = ExtResource("3_ye8ck")
 
-[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=269679102]
+[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=197017425]
 layout_mode = 2
 text = "Response Example"
 
-[node name="Portrait" type="TextureRect" parent="Balloon" unique_id=1154699293]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -30.0
-offset_top = 14.0
-offset_right = 137.0
-offset_bottom = 181.0
-texture = ExtResource("5_wxbh2")
-expand_mode = 1
-
-[node name="VoicePlayer" type="AudioStreamPlayer" parent="." unique_id=1785509272]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1293590298]
 unique_name_in_owner = true
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

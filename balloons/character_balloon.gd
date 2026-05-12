@@ -11,8 +11,8 @@ extends CanvasLayer
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var voice_player: AudioStreamPlayer = $VoicePlayer
 
-var mei_texture = preload("res://assets/mei.png")
-var boss_texture = preload("res://assets/boss.png")
+var mei_texture = preload("res://assets/characters/Mei.png")
+var boss_texture = preload("res://assets/characters/Boss.png")
 var mei_blip = preload("res://assets/audios/mei.wav")
 var boss_blip = preload("res://assets/audios/boss.wav")
 
@@ -105,7 +105,7 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 
-	var portrait_path: String = "res://assets/%s.png" % dialogue_line.character
+	var portrait_path: String = "res://assets/characters/%s.png" % dialogue_line.character
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)
 		portrait.visible = true
